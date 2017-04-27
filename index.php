@@ -8,6 +8,11 @@
 	<p> WORKING </p>
 
 	<?php 
+include 'error.php';
+include 'database.php';
+include 'Users.php';
+$testvaribale = new Users($pdo);
+
 
 	?>
 </body>
