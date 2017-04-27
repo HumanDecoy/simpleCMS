@@ -10,12 +10,12 @@ class Users
     $this->pdo = $pdo;
   }
 
-  public function getAllFrom($sort)
+  public function getAllFrom()
   {
 
     $statement = $this->pdo->prepare("
-      SELECT * FROM $sort");
+      SELECT * FROM user");
     $statement->execute();
-    return $statement->fetchAll();
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
   } 
 }
