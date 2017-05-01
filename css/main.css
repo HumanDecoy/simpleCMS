@@ -1,0 +1,13 @@
+html{
+  height: 100%;
+}
+body{
+  height: 100%;
+  background-color: slategrey;
+  color: #fff;
+  font: 150%/1.5 'Fira Code', monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+}
