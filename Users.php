@@ -18,4 +18,17 @@ class Users
     $statement->execute();
     return $statement->fetchAll(PDO::FETCH_ASSOC);
   } 
+
+  public function getUser($user)
+  {
+    $statement = $this->pdo->prepare("
+   SELECT username, id, password, isAdmin FROM user 
+   WHERE username = '$user'
+      ");
+    $statement->execute();
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+
+  }
+
+
 }
