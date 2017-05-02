@@ -1,12 +1,16 @@
-<?php
-	include "partials/header.php";
-	include "partials/error.php";
+<h2>Create a new blogpost</h2>
 
-	<form action="post.php" method="POST">
-    	<input type="text" name="title">
-    	<input type="textarea cols="40" rows="5"" name="blogText">
-    	<input type="submit" name="postBlog" value="Post">
-  	</form>
+<form action="post.php" method="POST" id="newPost">
+	<label>Title</label><br />
+    <input type="text" name="title"><br />
+    <label>Blogpost</label><br />
+    <textarea rows="14" cols="30" name="blogText"></textarea><br />
+    <input type="submit" name="postBlog" value="Post"><br />
+</form>
 
 
-	include "partials/footer.php";
+<h2>Your posts</h2>
+    
+
+
+
