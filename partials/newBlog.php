@@ -1,6 +1,6 @@
 <h2>Create a new blogpost</h2>
 
-<form action="post.php" method="POST" id="newPost">
+<form action="newBlogPost.php" method="POST" id="newPost">
 	<label>Title</label><br />
     <input type="text" name="title"><br />
     <label>Blogpost</label><br />
