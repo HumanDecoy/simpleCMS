@@ -6,13 +6,12 @@
 </head>
 <body>
 <h1> Create New User </h1>
-	<p> WORKING </p>
 
 	<?php 
-	include 'error.php';
+include 'error.php';
 include 'database.php';
 include 'Users.php';
-include 'login.php';
+
 $testvaribale = new Users($pdo);
 $users=$testvaribale->getAllFrom();
 foreach ($users as $key){
