@@ -6,6 +6,7 @@ $allUsers= new Users($pdo);
 $oldUser = $allUsers->getUser($_POST["username"]);
 
 if($oldUser["username"] === $_POST["username"]){
+	header("Location:dupuser.php");
 	echo "Username already taken, please try another one";
 }
 else{
