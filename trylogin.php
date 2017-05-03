@@ -4,6 +4,7 @@ include 'database.php';
 include 'newuser.php'; 
 include 'Users.php';
 
+
 // Takes info from form and adds to variables 
 $pw = $_POST["password"];
 $user = $_POST["username"];
@@ -25,8 +26,11 @@ if (password_verify($pw, $hash)) {
 	if($adminStatus === 1 ){
 		$_SESSION['admin'] = true;
 	}
+	else{
+		$_SESSION['admin'] = false;
+	}
  header("Location:index.php");
 } else { 
-	echo "NO DAT IS WRÖNG LIAR"; 
+	echo "Wrong password or username, please try again"; 
 }
 ?>
