@@ -3,32 +3,30 @@ session_start();
 include 'database.php';
 include 'newuser.php'; 
 include 'Users.php';
+
+// Takes info from form and adds to variables 
 $pw = $_POST["password"];
 $user = $_POST["username"];
+// Finds the user with the corresponding name in database
 $usercheck = new Users($pdo);
 $selectedUser = $usercheck->getUser($user);
+// Saves hashed password and other information from database
 $hash=$selectedUser["password"];
+$id = $selectedUser["id"];
+$adminStatus = $selectedUser["isAdmin"];
 
-var_dump($selectedUser);
 
-//Login,verify password
-var_dump(password_verify($pw, $hash));
+//compares form password to hash password and create session variables
 
 if (password_verify($pw, $hash)) { 
 	$_SESSION['loggedIn'] = true;
 	$_SESSION['username'] = $user;
-	echo "You are logged in!";
- /*
- header("Location:login.php");*/
+	$_SESSION['id'] = $id;
+	if($adminStatus === 1 ){
+		$_SESSION['admin'] = true;
+	}
+ header("Location:index.php");
 } else { 
 	echo "NO DAT IS WRÖNG LIAR"; 
 }
-
-// peter pass123
-var_dump($_SESSION["username"]);
-
-
-
-
-
 ?>
