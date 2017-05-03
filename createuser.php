@@ -7,23 +7,24 @@
 	<link rel="stylesheet" href="css/form.css">
 </head>
 <body>
-<?php 
-session_start();
-?>
+	<?php 
+	session_start();
+	?>
 
-			<div class="container pos">
+	<div class="container pos">
 
-				<form action="post.php" method="POST" class="form-signin">
-					<h2 class="form-signin-heading">Create new User</h2>
-				
-					<input id="inputUsername" class="form-control"  name="username" placeholder="Username"  required autofocus>
-					<label for="inputPassword" class="sr-only">Password</label>
-					<input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+		<form action="post.php" method="POST" class="form-signin">
+			<h2 class="form-signin-heading">Create new User</h2>
 
-					<button class="btn btn-lg btn-primary btn-block" type="submit">Create User</button>
-				</form>
+			<input id="inputUsername" class="form-control"  name="username" placeholder="Username"  required autofocus>
+			<label for="inputPassword" class="sr-only">Password</label>
+			<input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
 
-			</div>
+			<button class="btn btn-lg btn-primary btn-block" type="submit">create user</button>
+			<a href="index.php"  class="btn btn-lg btn-danger btn-block" >cancel</a>
+		</form>
+
+	</div>
 
 
 
