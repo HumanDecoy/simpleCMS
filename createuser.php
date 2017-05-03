@@ -13,6 +13,8 @@
 
 	<div class="container pos">
 
+	
+
 		<form action="post.php" method="POST" class="form-signin">
 			<h2 class="form-signin-heading">Create new User</h2>
 
