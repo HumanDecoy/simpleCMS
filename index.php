@@ -5,6 +5,7 @@
 	<title>simpleCMS</title>
 	<link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" href="css/index.css">
+	<link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
 </head>
 <body>
 	<?php session_start(); ?>
@@ -14,7 +15,7 @@
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<a class="navbar-brand" href="#">BloggPortal</a>
+		<a class="navbar-brand" style="font-family: 'Love Ya Like A Sister', cursive;"  href="index.php">BloggPortal</a>
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
