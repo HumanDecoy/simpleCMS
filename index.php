@@ -12,8 +12,11 @@
 	include "navbar.php";
 	 ?>
 	<h1>DIS IS FIRSTPAGE</h1>
+	<!-- EXAMPLE FOR SENDING VARIABLES OVER PAGES -->
+<a href="login.php?myvar=hello"> test </a>
 
 	<?php 
+
 	if ($_SESSION['loggedIn'] === true){
 		echo "<h2> Welcome " . $_SESSION['username'] . "!</h2>";
 	} 
