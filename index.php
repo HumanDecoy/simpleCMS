@@ -32,7 +32,7 @@
 				<?php
 				if ($_SESSION["loggedIn"] === true){
 					echo"<li class='nav-item'>
-					<a class='nav-link' href='index.php'>Logout</a>
+					<a class='nav-link' href='logout.php'>Logout</a>
 				</li>";}
 				else{
 					echo"<li class='nav-item'>
