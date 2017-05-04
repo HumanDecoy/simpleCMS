@@ -37,6 +37,10 @@
 				else{
 					echo"<li class='nav-item'>
 					<a class='nav-link' href='login.php'>Login</a>
+			
+				";
+					echo"<li class='nav-item'>
+					<a class='nav-link' href='createuser.php'>Register</a>
 				</li>";
 				} ?>
 			</ul>
