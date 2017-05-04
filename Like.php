@@ -27,7 +27,7 @@ class Like
    AND  postId = '$postId'
       ");
     $statement->execute();
-    return $statement->fetch(PDO::FETCH_ASSOC);
+    return $statement->fetch(PDO::FETCH_ASSOC) ;
 
   }
 
