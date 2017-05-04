@@ -29,8 +29,10 @@ if (password_verify($pw, $hash)) {
 	else{
 		$_SESSION['admin'] = false;
 	}
- header("Location:index.php");
-} else { 
-	echo "Wrong password or username, please try again"; 
+	header("Location:index.php");
+}
+// If wrong password sends user to error file.
+else { 
+	header("Location:wrongpassword.php"); 
 }
 ?>

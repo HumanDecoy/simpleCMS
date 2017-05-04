@@ -52,6 +52,8 @@
 	</nav>
 	<!-- END NAVBAR -->
 
+
+
 	<h1>DIS IS FIRSTPAGE</h1>
 
 	<?php 
