@@ -7,12 +7,10 @@
 	<link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-	<?php session_start() ;
-
-	?>
+	<?php session_start(); ?>
 
 	<!-- NAVBAR -->
-	<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+	<nav class="navbar navbar-toggleable-md navbar-light bg-faded" style="background-color: #b5d7e5;">
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -23,15 +21,16 @@
 				<li class="nav-item active">
 					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link disabled" href="#">Disabled</a>
-				</li>
-
-
+				<?
+				if ($_SESSION["loggedIn"] === true){
+					echo"<li class='nav-item'>
+					<a class='nav-link' href='partials/blog.php'>New Blogpost</a>
+				</li>";}
+				?>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">	
 
-				<?php
+				<?
 				if ($_SESSION["loggedIn"] === true){
 					echo"<li class='nav-item'>
 					<a class='nav-link' href='logout.php'>Logout</a>
