@@ -7,7 +7,9 @@
 	<link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-	<?php session_start() ?>
+	<?php session_start() ;
+
+	?>
 
 	<!-- NAVBAR -->
 	<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
