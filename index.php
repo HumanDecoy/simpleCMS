@@ -30,7 +30,6 @@
 				?>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">	
-
 				<?
 				if ($_SESSION["loggedIn"] === true){
 					echo"<li class='nav-item'>
@@ -38,12 +37,9 @@
 				</li>";}
 				else{
 					echo"<li class='nav-item'>
-					<a class='nav-link' href='login.php'>Login</a>
-			
-				";
+					<a class='nav-link' href='login.php'>Login</a>";
 					echo"<li class='nav-item'>
-					<a class='nav-link' href='createuser.php'>Register</a>
-				</li>";
+					<a class='nav-link' href='createuser.php'>Register</a></li>";
 				} ?>
 			</ul>
 			<form class="form-inline my-2 my-lg-0">
