@@ -9,7 +9,12 @@
 <body>
 	<?php 
 	session_start();
-	?>
+	
+// Prevents logged in user to acces create new user page.
+	if($_SESSION['loggedIn'] === true){
+		header("Location:index.php");
+	}
+?>
 
 	<div class="container pos">
 
