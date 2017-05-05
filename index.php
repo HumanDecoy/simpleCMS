@@ -10,11 +10,23 @@
 <body>
 	<?php session_start(); 
 	include "navbar.php";
-	 ?>
-	<h1>DIS IS FIRSTPAGE</h1>
-	<!-- EXAMPLE FOR SENDING VARIABLES OVER PAGES -->
-<a href="login.php?myvar=hello"> test </a>
+	?>
+	<div class="container">
+		
 
+		<div class="row col-md-12">
+			<h1>DIS IS FIRSTPAGE</h1>
+		</div>
+		<!-- EXAMPLE FOR SENDING VARIABLES OVER PAGES -->
+		<div class="row row col-md-12">
+			<a href="login.php?myvar=hello"> test </a>
+		</div>
+	
+
+
+
+
+	</div>
 	<?php 
 
 	if ($_SESSION['loggedIn'] === true){
