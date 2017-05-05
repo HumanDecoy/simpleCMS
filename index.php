@@ -6,16 +6,18 @@
 	<link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" href="css/index.css">
 	<link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
 </head>
 <body>
 	<?php session_start(); 
 	include "navbar.php";
 	 ?>
-	<h1>DIS IS FIRSTPAGE</h1>
+	<h1>SHOW ALL THE BLOGS</h1><br />
+	<?php include "partials/showAllBlogPosts.php"; ?>
 	<!-- EXAMPLE FOR SENDING VARIABLES OVER PAGES -->
 <a href="login.php?myvar=hello"> test </a>
 
-	<?php 
+	<?php
 
 	if ($_SESSION['loggedIn'] === true){
 		echo "<h2> Welcome " . $_SESSION['username'] . "!</h2>";

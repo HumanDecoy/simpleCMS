@@ -1,6 +1,7 @@
 <?php 
 	include "error.php";
 	include "database.php";
+	session_start();
 
 
 $st = $pdo->prepare("SELECT * FROM user");  
@@ -21,15 +22,3 @@ echo "</ul>";
 
 ?>
 
-
-<!--
-var_dump ($data);
-
-$currentUser = array();
-
-foreach($data as $key=>$value){
-	$currentUser[count($currentUser)] = $key;
-}
-
-echo $currentUser[1];
--->
