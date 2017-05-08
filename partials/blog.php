@@ -7,6 +7,7 @@
 	include "database.php";
 	include "newBlog.php";
 	include "../Users.php";
+	include "newLike.php";
 	$username = $_SESSION['username'];
 
 
@@ -25,7 +26,7 @@ foreach (array_reverse($userData) as $row)
 		<h1>'.$row['title'].'</h1>
 		<p>By: '.$row['userID'].' Created at: '.$row['createdAt'].'</p>
 		<p>'.$row['post'].'</p>
-			
+			<a href="newLike.php?postId='. $row['id'] .'">Like</a>
 		<button class="btn btn-lg btn-primary" type="submit" id="likeThis">Like</button><br /><br />
 		<form action="editPost.php" method="GET">
 			<button class="btn btn-lg btn-primary" type="submit" id="editThis">Edit</button>
