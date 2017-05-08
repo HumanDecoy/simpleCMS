@@ -10,7 +10,8 @@ $like = new Like($pdo);
 $isLiked = $like->getLike($user, $postLikeId);
 
 if ($isLiked){
-	echo' NO MORE LIKES FOR YOU MAH FRIEEEND ';
+	$like->deleteLike($user,$postLikeId);
+	header("Location:blog.php");
 }
 else {
 $like->createNew($user,$postLikeId);

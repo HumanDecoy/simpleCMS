@@ -45,5 +45,16 @@ class Like
     
   } 
 
+    public function deleteLike($user,$postId)
+  {
+
+    $statement = $this->pdo->prepare("
+      DELETE FROM likes
+      WHERE userId = '$user'
+      AND  postId = '$postId'
+      ");
+    $statement->execute();
+    
+  } 
 
 }
