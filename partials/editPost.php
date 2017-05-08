@@ -9,7 +9,7 @@ $st = $pdo->prepare("SELECT * FROM blogpost INNER JOIN user ON blogpost.userID =
 $st->execute();
 	
 $data = $st->fetchAll(PDO::FETCH_ASSOC);
-echo '<h1>THE BLOGPOST YOU WANTED TO SEE</h1>';
+echo '<h1>THE BLOGPOST YOU WANTED TO EDIT</h1>';
 foreach (array_reverse($data) as $row)
 { ?>
 	<div> 

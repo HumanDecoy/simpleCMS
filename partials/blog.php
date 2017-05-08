@@ -1,20 +1,26 @@
 <?php
+	session_start();
+
 	include "header.php";  
 	include "navbar.php";
 	include "error.php";
 	include "database.php";
 	include "newBlog.php";
+	include "../Users.php";
+	$username = $_SESSION['username'];
 
-	session_start();
 
+	$currentUser = new Users($pdo);
 
-$st = $pdo->prepare("SELECT * FROM blogpost INNER JOIN user ON blogpost.userID = user.id");  
-$st->execute();
+	$userData = $currentUser->getAllPosts($_SESSION['id']);
+
+	var_dump($userData);
 	
-$data = $st->fetchAll(PDO::FETCH_ASSOC);
+
+
 echo "<h2>YOUR POSTS</h2>";
 
-foreach (array_reverse($data) as $row)
+foreach (array_reverse($userData) as $row)
 { ?>
 	<div>
 	<?php 

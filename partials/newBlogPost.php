@@ -1,24 +1,32 @@
 <?php 
+	session_start();
+	include "header.php";  
+	include "navbar.php";
 	include "error.php";
 	include "database.php";
-	session_start();
-
-
-$st = $pdo->prepare("SELECT * FROM user");  
-$st->execute();
 	
-$data = $st->fetchAll(PDO::FETCH_ASSOC);
+	$username = $_SESSION['username'];
 
 
 
-echo "<ul>";
-foreach ($data as $row)
-{ ?>
-	<li> <?php echo $row["id"] . " " . $row["username"]?> </li>
-	
 
-<?php } 
-echo "</ul>";
+	$newTitle = $_POST['newTitle'];
+	$newPost = $_POST['newPost'];
+		
+	echo $newTitle . " " . $newPost;
 
-?>
+	/*
+	$st = $pdo->prepare("INSERT INTO blogpost (title, post) VALUES ($newTitle, $newPost"); 
+	$st->execute();
+		
+	*/
+
+
+
+
+
+
+include "footer.php";
+
+
 

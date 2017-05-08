@@ -13,8 +13,10 @@
 	include "navbar.php";
 
 	 ?>
+	 
 	<h1>SHOW ALL THE BLOGS</h1><br />
 	<?php include "partials/showAllBlogPosts.php"; ?>
+
 	<!-- EXAMPLE FOR SENDING VARIABLES OVER PAGES -->
 <a href="login.php?myvar=hello"> test </a>
 

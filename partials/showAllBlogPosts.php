@@ -10,13 +10,13 @@ foreach (array_reverse($data) as $row)
 { ?>
 	<div> 
 	<?php 
-		echo '<h3>By: '.$row["username"].'</h3>'; 
-		echo '<p>Created at: '.$row['createdAt'].'</p>'; 
-		echo '<h3>'.$row['title'].'</h3>
-		<form action="partials/viewPost.php" method="GET">
-			<button class="btn btn-lg btn-primary">Read More</button>
-		</form>
-		<img src="thumb-up.png" class="img-fluid" alt="Responsive image">'.$row['likes'].'<br/><br />';
+		echo '
+		<h3>By: '.$row["username"].'</h3>
+		<p>Created at: '.$row['createdAt'].'</p>
+		<h3>'.$row['title'].'</h3>
+		<p>'.$row['post'].'</p>
+		<img src="thumb-up.png" class="img-fluid" alt="Responsive image">'.$row['likes'].'<br/><br />
+		';
 	?> 
 	</div>
 	
