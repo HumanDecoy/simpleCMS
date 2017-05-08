@@ -30,5 +30,15 @@ class Users
 
   }
 
+  public function getAllPosts($id)
+  {
+    $statement = $this->pdo->prepare("
+    SELECT * FROM blogpost
+    WHERE userID = '$id'
+      ");
+    $statement->execute();
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+  }
+
 
 }
