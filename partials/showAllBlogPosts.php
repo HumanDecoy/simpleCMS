@@ -11,9 +11,9 @@ foreach (array_reverse($data) as $row)
 	<div> 
 	<?php 
 		echo '
-		<h3>By: '.$row["username"].'</h3>
-		<p>Created at: '.$row['createdAt'].'</p>
-		<h3>'.$row['title'].'</h3>
+		<h1>'.$row['title'].'</h1>
+		<h3>By: '.$row["username"].' Created at: '.$row['createdAt'].'</h3>
+		
 		<p>'.$row['post'].'</p>
 		<img src="thumb-up.png" class="img-fluid" alt="Responsive image"><br/><br />
 		';
