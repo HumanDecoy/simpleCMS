@@ -8,6 +8,7 @@
 	include "newBlog.php";
 	include "../Users.php";
 	include "newLike.php";
+	include "editPost.php"
 	$username = $_SESSION['username'];
 
 
