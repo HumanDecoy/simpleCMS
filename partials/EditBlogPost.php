@@ -6,7 +6,7 @@ include "navbar.php";
 include "error.php";
 include "database.php";
 
- $thePostId=$_GET['postId'];
+ 
 
 class EditBlogPost
 {
@@ -39,6 +39,21 @@ class EditBlogPost
 
   }
 
+  public function editThePost($editTitle, $editPost, $thePostId)
+  {
+  	$statement = $this->pdo->prepare("
+	UPDATE blogpost SET `title`=:editTitle, `post`=:editPost
+	WHERE id = $thePostId
+  		");
+  	$statement->execute([
+  		"editTitle" => $editTitle,
+  		"editPost" => $editPost,
+  	]);
+  	
+  }
+
 }
+
+
 
 

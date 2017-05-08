@@ -19,9 +19,10 @@ foreach ($thePost as $row)
   
   <form action="postToEdit.php" method="POST">
     <label>Title</label><br />
-      <input type="text" name="newTitle" value="<?php echo $row['title'] ?>"><br />
+      <input type="text" name="editTitle" value="<?php echo $row['title'] ?>"><br />
       <label>Blogpost</label><br />
-      <textarea name="newPost" rows="10" cols="30" value="newPost"><?php echo $row['post'] ?></textarea> <br />
+      <textarea name="editPost" rows="10" cols="30" value="newPost"><?php echo $row['post'] ?></textarea> <br />
+      <input type="hidden" name="editPostId" value="<?php echo $row['id'] ?>">
       <input class="btn btn-lg btn-primary" type="submit" name="sumbit" value="Edit"></button><br />
   </form><br /><br />
 
