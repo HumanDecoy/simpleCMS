@@ -31,5 +31,19 @@ class Like
 
   }
 
+  public function createNew($user,$postId)
+  {
+
+    $statement = $this->pdo->prepare("
+      INSERT INTO likes (postId, userId)
+      VALUES (:postId, :userId)
+      ");
+    $statement->execute([
+      ":userId" => $user,
+      ":postId" => $postId,
+      ]);
+    
+  } 
+
 
 }
