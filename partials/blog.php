@@ -24,13 +24,12 @@ foreach (array_reverse($userData) as $row)
 	$count = 0;
 	foreach($postLikes as $likes){
 		if($likes['postId'] === $row['id'] ){
-			
 			$count++;
 		}
 	}
 	echo  $count . '
 	<h1>'.$row['title'].'</h1>
-	<p>By: '.$row['userID'].' Created at: '.$row['createdAt'].'</p>
+	<p>By: '.$row['id'].' Created at: '.$row['createdAt'].'</p>
 	<p>'.$row['post'].'</p>
 	<a href="newLike.php?postId='. $row['id'] .'">
 		<button class="btn btn-lg btn-primary" type="submit" id="likeThis">Like</button></a><br /><br />
