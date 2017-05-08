@@ -30,14 +30,14 @@ foreach (array_reverse($userData) as $row)
 	<a href="newLike.php?postId='. $row['id'] .'">
 		<button class="btn btn-lg btn-primary" type="submit" id="likeThis">Like</button></a><br /><br />
 		<a href="editPost.php?postId='. $row['id'] .'">
-			
-			<button class="btn btn-lg btn-primary" type="submit" id="editThis">Edit</button>
+
+			<button class="btn btn-lg btn-primary" type="submit" id="editThis">Edit</button></a>
 			<br />
 			<form action="deletePost.php" method="GET">
 				<button class="btn btn-lg btn-primary" type="submit" id="deleteThis">Delete</button>
 			</form><br /><br />
 			';
-			
+
 			?> 
 		</div>
 		<?php 
