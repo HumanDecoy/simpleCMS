@@ -4,16 +4,18 @@
 	include "navbar.php";
 	include "error.php";
 	include "database.php";
+	include "blogPost.php";
 	
-	$username = $_SESSION['username'];
-
-
-
-
+	$userid = $_SESSION['id'];
 	$newTitle = $_POST['newTitle'];
 	$newPost = $_POST['newPost'];
+
+	$thePost = new NewBlogPost($pdo);
+
+	$thePost->createNew($newTitle, $newPost, $userid);
+
 		
-	echo $newTitle . " " . $newPost;
+	header("Location:blog.php");
 
 	/*
 	$st = $pdo->prepare("INSERT INTO blogpost (title, post) VALUES ($newTitle, $newPost"); 

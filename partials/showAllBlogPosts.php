@@ -15,7 +15,7 @@ foreach (array_reverse($data) as $row)
 		<p>Created at: '.$row['createdAt'].'</p>
 		<h3>'.$row['title'].'</h3>
 		<p>'.$row['post'].'</p>
-		<img src="thumb-up.png" class="img-fluid" alt="Responsive image">'.$row['likes'].'<br/><br />
+		<img src="thumb-up.png" class="img-fluid" alt="Responsive image"><br/><br />
 		';
 	?> 
 	</div>

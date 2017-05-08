@@ -14,9 +14,6 @@
 
 	$userData = $currentUser->getAllPosts($_SESSION['id']);
 
-	var_dump($userData);
-	
-
 
 echo "<h2>YOUR POSTS</h2>";
 
