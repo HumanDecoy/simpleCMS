@@ -13,7 +13,6 @@ foreach (array_reverse($data) as $row)
 		echo '
 		<h1>'.$row['title'].'</h1>
 		<h3>By: '.$row["username"].' Created at: '.$row['createdAt'].'</h3>
-		
 		<p>'.$row['post'].'</p>
 		<img src="thumb-up.png" class="img-fluid" alt="Responsive image"><br/><br />
 		';

@@ -1,32 +1,32 @@
 <?php
-include "header.php";
-include "navbar.php";
-include "error.php";
-include "database.php";
-session_start();
+  
+  include "EditBlogPost.php";
+  $currentId = $_SESSION['id'];
+  $thePostId=$_GET['postId'];
 
-$st = $pdo->prepare("SELECT * FROM blogpost INNER JOIN user ON blogpost.userID = user.id");  
-$st->execute();
-	
-$data = $st->fetchAll(PDO::FETCH_ASSOC);
-echo '<h1>THE BLOGPOST YOU WANTED TO EDIT</h1>';
-foreach (array_reverse($data) as $row)
+  $currentPost = new EditBlogPost($pdo);
+  
+  $thePost = $currentPost->getPost($thePostId);
+  
+  var_dump($thePost);
+
+
+foreach ($thePost as $row)
 { ?>
-	<div> 
-	<?php 
-		echo '
-			<h3>By: '.$row["username"].'</h3>
-			<p>Created at: '.$row['createdAt'].'</p>
-			<h3>'.$row['title'].'</h3>
-			<p>'.$row['post'].'</p>
-			<form action="addLike.php" method="POST">
-				<button class="btn btn-lg btn-primary">Like</button>
-			</form>
-			<img src="../thumb-up.png" class="img-fluid" alt="Responsive image">'.$row['likes'].'<br/><br />
-		';
-	?> 
-	</div>
-	
+
+<div class="container">
+  <div class="row row-centered">
+  
+  <form action="postToEdit.php" method="POST">
+    <label>Title</label><br />
+      <input type="text" name="newTitle" value="<?php echo $row['title'] ?>"><br />
+      <label>Blogpost</label><br />
+      <textarea name="newPost" rows="10" cols="30" value="newPost"><?php echo $row['post'] ?></textarea> <br />
+      <input class="btn btn-lg btn-primary" type="submit" name="sumbit" value="Edit"></button><br />
+  </form><br /><br />
+
+  </div>
+</div>
+  
 
 <?php } 
-include "footer.php";

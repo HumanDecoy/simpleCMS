@@ -17,15 +17,6 @@
 		
 	header("Location:blog.php");
 
-	/*
-	$st = $pdo->prepare("INSERT INTO blogpost (title, post) VALUES ($newTitle, $newPost"); 
-	$st->execute();
-		
-	*/
-
-
-
-
 
 
 include "footer.php";
