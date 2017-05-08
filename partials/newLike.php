@@ -12,8 +12,9 @@ $isLiked = $like->getLike($user, $postLikeId);
 var_dump($isLiked);
 
 if ($isLiked){
-	echo' its liked:( ';
+	echo' NO MORE LIKES FOR YOU MAH FRIEEEND ';
 }
 else {
-	echo'its not liked ';
+$like->createNew($user,$postLikeId);
+header("Location:blog.php");
 }
