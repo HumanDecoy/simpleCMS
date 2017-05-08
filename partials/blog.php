@@ -7,13 +7,11 @@ include "error.php";
 include "database.php";
 include "newBlog.php";
 include "../Users.php";
-
-
+include "../Like.php";
+$likes = new Like($pdo);
+$postLikes = $likes->getAllFrom();
 $username = $_SESSION['username'];
-
-
 $currentUser = new Users($pdo);
-
 $userData = $currentUser->getAllPosts($_SESSION['id']);
 
 
@@ -23,7 +21,14 @@ foreach (array_reverse($userData) as $row)
 	{ ?>
 <div>
 	<?php 
-	echo '
+	$count = 0;
+	foreach($postLikes as $likes){
+		if($likes['postId'] === $row['id'] ){
+			
+			$count++;
+		}
+	}
+	echo  $count . '
 	<h1>'.$row['title'].'</h1>
 	<p>By: '.$row['userID'].' Created at: '.$row['createdAt'].'</p>
 	<p>'.$row['post'].'</p>
