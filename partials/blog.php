@@ -28,6 +28,7 @@ foreach (array_reverse($userData) as $row)
 		<p>'.$row['post'].'</p>
 			<a href="newLike.php?postId='. $row['id'] .'">Like</a>
 		<button class="btn btn-lg btn-primary" type="submit" id="likeThis">Like</button><br /><br />
+		<a href="editPost.php?postId='. $row['id'] .'">Edit</a>
 		<form action="editPost.php" method="GET">
 			<button class="btn btn-lg btn-primary" type="submit" id="editThis">Edit</button>
 		</form><br />
