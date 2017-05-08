@@ -7,8 +7,6 @@
   $currentPost = new EditBlogPost($pdo);
   
   $thePost = $currentPost->getPost($thePostId);
-  
-  var_dump($thePost);
 
 
 foreach ($thePost as $row)
