@@ -49,7 +49,15 @@ class EditBlogPost
   		"editTitle" => $editTitle,
   		"editPost" => $editPost,
   	]);
-  	
+  }
+
+  public function deletePost($thePostId)
+  {
+    $statement = $this->pdo->prepare("
+    DELETE FROM blogpost
+    WHERE id = $thePostId
+      ");
+    $statement->execute();
   }
 
 }
