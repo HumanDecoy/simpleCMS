@@ -15,7 +15,7 @@
 	$thePost->createNew($newTitle, $newPost, $userid);
 
 		
-	header("Location:blog.php");
+	header("Location:/simplecms/partials/blog.php");
 
 
 

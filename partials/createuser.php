@@ -3,16 +3,18 @@
 <head>
 	<meta charset="UTF-8">
 	<title>LogIn</title>
-	<link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" href="css/form.css">
+	<link rel="stylesheet" href="/simplecms/css/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="/simplecms/css/form.css">
 </head>
 <body>
+
+
 	<?php 
 	session_start();
 	
 // Prevents logged in user to acces create new user page.
 	if($_SESSION['loggedIn'] === true){
-		header("Location:index.php");
+		header("Location:/simplecms/index.php");
 	}
 ?>
 
@@ -20,7 +22,7 @@
 
 	
 
-		<form action="post.php" method="POST" class="form-signin">
+		<form action="/simplecms/partials/post.php" method="POST" class="form-signin">
 			<h2 class="form-signin-heading">Create new User</h2>
 
 			<input id="inputUsername" class="form-control"  name="username" placeholder="Username"  required autofocus>
@@ -28,7 +30,7 @@
 			<input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
 
 			<button class="btn btn-lg btn-primary btn-block" type="submit">create user</button>
-			<a href="index.php"  class="btn btn-lg btn-danger btn-block" >cancel</a>
+			<a href="/simplecms/index.php"  class="btn btn-lg btn-danger btn-block" >cancel</a>
 		</form>
 
 	</div>

@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>simpleCMS</title>
-	<link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" href="css/index.css">
-	<link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
-	<link href="css/main.css" rel="stylesheet">
-</head>
-<body>
+
 	<?php session_start(); 
-	include "navbar.php";
+	include "partials/header.php";
+	include "partials/navbar.php";
+
 
 	 ?>
 
@@ -50,10 +42,9 @@
 		echo "<h3> overlord </h3>";
 	}
 	
-	?>
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/jsBootstrap/bootstrap.js"></script>
 
 
-</body>
-</html>
+	include "partials/footer.php";
+	?> 
+	
+

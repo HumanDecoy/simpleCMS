@@ -1,6 +1,6 @@
 <?php
   
-  include "EditBlogPost.php";
+  include "../class/EditBlogPost.php";
   $currentId = $_SESSION['id'];
   $thePostId=$_GET['postId'];
 
@@ -15,7 +15,7 @@ foreach ($thePost as $row)
 <div class="container">
   <div class="row row-centered">
   
-  <form action="postToEdit.php" method="POST">
+  <form action="/simplecms/partials/postToEdit.php" method="POST">
     <label>Title</label><br />
       <input type="text" name="editTitle" value="<?php echo $row['title'] ?>"><br />
       <label>Blogpost</label><br />

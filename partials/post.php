@@ -1,35 +1,22 @@
 <?php 
-	include "error.php";
-	include "database.php";
+include 'database.php';
+include '../class/newuser.php'; 
+include '../class/Users.php';
+$allUsers= new Users($pdo);
+$oldUser = $allUsers->getUser($_POST["username"]);
 
+if($oldUser["username"] === $_POST["username"]){
+	header("Location:/simplecms/partials/dupuser.php");
+	echo "Username already taken, please try another one";
+}
+else{
+	$hashed=password_hash($_POST["password"], PASSWORD_DEFAULT);
+	$new = new Newuser($pdo);
+	$new->createNew($_POST["username"],$hashed);
 
-$st = $pdo->prepare("SELECT * FROM user");  
-$st->execute();
-	
-$data = $st->fetchAll(PDO::FETCH_ASSOC);
+	header("Location:/simplecms/partials/login.php");
 
-
-
-echo "<ul>";
-foreach ($data as $row)
-{ ?>
-	<li> <?php echo $row["id"] . " " . $row["username"]?> </li>
-	
-
-<?php } 
-echo "</ul>";
-
-?>
-
-
-<!--
-var_dump ($data);
-
-$currentUser = array();
-
-foreach($data as $key=>$value){
-	$currentUser[count($currentUser)] = $key;
 }
 
-echo $currentUser[1];
--->
+
+?>

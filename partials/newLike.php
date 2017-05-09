@@ -1,8 +1,8 @@
 <?php
-include 
-include "error.php";
+
+include "../error.php";
 include "database.php";
-include "../Like.php";
+include "../class/Like.php";
 session_start();
 $postLikeId=$_GET['postId'];
 $user = $_SESSION['id'];
@@ -11,9 +11,9 @@ $isLiked = $like->getLike($user, $postLikeId);
 
 if ($isLiked){
 	$like->deleteLike($user,$postLikeId);
-	header("Location:blog.php");
+	header("Location:/simplecms/partials/blog.php");
 }
 else {
 $like->createNew($user,$postLikeId);
-header("Location:blog.php");
+header("Location:/simplecms/partials/blog.php");
 }

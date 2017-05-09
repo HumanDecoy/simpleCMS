@@ -3,11 +3,11 @@ session_start();
 
 include "header.php";  
 include "navbar.php";
-include "error.php";
+include "../error.php";
 include "database.php";
 include "newBlog.php";
-include "../Users.php";
-include "../Like.php";
+include "../class/Users.php";
+include "../class/Like.php";
 $likes = new Like($pdo);
 $postLikes = $likes->getAllFrom();
 $username = $_SESSION['username'];

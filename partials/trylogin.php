@@ -1,8 +1,8 @@
 <?php 
 session_start();
 include 'database.php';
-include 'newuser.php'; 
-include 'Users.php';
+include '../class/newuser.php'; 
+include '../class/Users.php';
 
 
 // Takes info from form and adds to variables 
@@ -29,10 +29,10 @@ if (password_verify($pw, $hash)) {
 	else{
 		$_SESSION['admin'] = false;
 	}
-	header("Location:index.php");
+	header("Location:/simplecms/index.php");
 }
 // If wrong password sends user to error file.
 else { 
-	header("Location:wrongpassword.php"); 
+	header("Location:/simplecms/partials/wrongpassword.php"); 
 }
 ?>

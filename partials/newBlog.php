@@ -2,7 +2,7 @@
 <div class="container">
 	<div class="row row-centered">
 	
-	<form action="newBlogPost.php" method="POST">
+	<form action="/simplecms/partials/newBlogPost.php" method="POST">
 		<label>Title</label><br />
 	    <input type="text" name="newTitle"><br />
 	    <label>Blogpost</label><br />

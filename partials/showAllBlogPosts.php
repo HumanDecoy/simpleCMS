@@ -1,5 +1,5 @@
 <?php
-include "error.php";
+include "../error.php";
 include "database.php";
 
 $st = $pdo->prepare("SELECT * FROM blogpost INNER JOIN user ON blogpost.userID = user.id");  
