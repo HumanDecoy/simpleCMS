@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/simpleCMS/css/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" href="/simpleCMS/css/index.css">
 	<link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
-    <link href="/simpleCMS/css/main.css">
+    <link href="/simpleCMS/css/main.css" rel="stylesheet">
 </head>
 <body>
 
