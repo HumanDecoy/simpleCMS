@@ -16,6 +16,7 @@ $currentUser = new Users($pdo);
 $userData = $currentUser->getAllPosts($_SESSION['id']);
 ?>
 <div class="container">
+
 <?php
 
 echo "  <h2>YOUR POSTS</h2><br />";
@@ -31,14 +32,14 @@ foreach (array_reverse($userData) as $row)
 		}
 	}
 	echo  '
-	
+	<div class="col-md-8 offset-md-2">
 	<h1>'.$row['title'].'</h1>
 	<p>By: '.$row['id'].' Created at: '.$row['createdAt'].'</p>
 	<p>'.$row['post'].'</p>
 	<a href="newLike.php?postId='. $row['id'] .'">
 		<div class="row">
 		<img src="/simplecms/pictures/thumb-up.png" class="img-fluid" alt="Responsive image">
-		<button class="btn btn-lg btn-primary" type="submit" id="likeThis"> ['. $count  . ']</button></a> </div>
+		<button class="btn btn-lg btn-primary" type="submit" id="likeThis"> ['. $count  . ']</button></a> 
 		<a href="editPost.php?postId='. $row['id'] .'"><button class="btn btn-lg btn-primary" type="submit" id="editThis">Edit</button></a>
 			<br />
 		<a href="deletePost.php?postId='. $row['id'] .'"><button class="btn btn-lg btn-primary" type="submit" id="deleteThis">Delete</button></a>
@@ -46,10 +47,11 @@ foreach (array_reverse($userData) as $row)
 			<br /><br />
 
 
-			</div>
+			
 			';
 
 			?> 
+		</div>
 		</div>
 		<?php 
 	} 
