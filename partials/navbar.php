@@ -20,6 +20,11 @@
 			</ul>
 			<ul class="nav navbar-nav navbar-right">	
 				<?
+				if($_SESSION["admin"]===true){
+					echo"<li class='nav-item'>
+					<a class='nav-link' href='/simplecms/partials/admin.php'>Admin</a>";
+				}
+				
 				if ($_SESSION["loggedIn"] === true){
 					echo"<li class='nav-item'>
 					<a class='nav-link' href='/simplecms/partials/logout.php'>Logout</a>
@@ -29,7 +34,11 @@
 					<a class='nav-link' href='/simplecms/partials/login.php'>Login</a>";
 					echo"<li class='nav-item'>
 					<a class='nav-link' href='/simplecms/partials/createuser.php'>Register</a></li>";
-				} ?>
+				}
+				
+				
+
+				 ?>
 			</ul>
 			<form class="form-inline my-2 my-lg-0">
 			</form>

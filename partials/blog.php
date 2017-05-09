@@ -40,9 +40,9 @@ foreach (array_reverse($userData) as $row)
 		<div class="row">
 		<img src="/simplecms/pictures/thumb-up.png" class="img-fluid" alt="Responsive image">
 		<button class="btn btn-lg btn-primary" type="submit" id="likeThis"> ['. $count  . ']</button></a> 
-		<a href="editPost.php?postId='. $row['id'] .'"><button class="btn btn-lg btn-primary" type="submit" id="editThis">Edit</button></a>
+		<a href="editPost.php?postId='. $row['id'] .'"><button class=" btn btn-lg btn-primary" type="submit" id="editThis">Edit</button></a>
 			<br />
-		<a href="deletePost.php?postId='. $row['id'] .'"><button class="btn btn-lg btn-primary" type="submit" id="deleteThis">Delete</button></a>
+		<a href="deletePost.php?postId='. $row['id'] .'"><button class=" btn btn-lg btn-primary" type="submit" id="deleteThis">Delete</button></a>
 			<br />
 			<br /><br />
 
