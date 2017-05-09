@@ -42,7 +42,7 @@ foreach (array_reverse($userData) as $row)
 		<button class="btn btn-lg btn-primary" type="submit" id="likeThis"> ['. $count  . ']</button></a> 
 		<a href="editPost.php?postId='. $row['id'] .'"><button class=" btn btn-lg btn-primary" type="submit" id="editThis">Edit</button></a>
 			<br />
-		<a href="deletePost.php?postId='. $row['id'] .'"><button class=" btn btn-lg btn-primary" type="submit" id="deleteThis">Delete</button></a>
+		<a href="deleteCheck.php?postId='. $row['id'] .'"><button class=" btn btn-lg btn-primary" type="submit" id="deleteThis">Delete</button></a>
 			<br />
 			<br /><br />
 

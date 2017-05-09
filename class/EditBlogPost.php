@@ -3,7 +3,7 @@ session_start();
 
 include "header.php";  
 include "navbar.php";
-include "error.php";
+include "../error.php";
 include "database.php";
 
  
@@ -22,7 +22,8 @@ class EditBlogPost
   {
 
     $statement = $this->pdo->prepare("
-      SELECT * FROM blogpost");
+      SELECT * FROM blogpost
+    ");
     $statement->execute();
     return $statement->fetchAll(PDO::FETCH_ASSOC);
   } 
@@ -31,9 +32,9 @@ class EditBlogPost
   public function getPost($thePostId)
   {
     $statement = $this->pdo->prepare("
-   SELECT id, title, post FROM blogpost 
-   WHERE id = $thePostId
-      ");
+      SELECT id, title, post FROM blogpost 
+      WHERE id = $thePostId
+    ");
     $statement->execute();
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 
@@ -42,9 +43,9 @@ class EditBlogPost
   public function editThePost($editTitle, $editPost, $thePostId)
   {
   	$statement = $this->pdo->prepare("
-	UPDATE blogpost SET `title`=:editTitle, `post`=:editPost
-	WHERE id = $thePostId
-  		");
+	   UPDATE blogpost SET `title`=:editTitle, `post`=:editPost
+	   WHERE id = $thePostId
+  	");
   	$statement->execute([
   		"editTitle" => $editTitle,
   		"editPost" => $editPost,
@@ -54,10 +55,11 @@ class EditBlogPost
   public function deletePost($thePostId)
   {
     $statement = $this->pdo->prepare("
-    DELETE FROM blogpost
-    WHERE id = $thePostId
-      ");
+      DELETE FROM blogpost
+      WHERE id = $thePostId
+    ");
     $statement->execute();
+    header("Location:/simplecms/partials/blog.php");
   }
 
 }
