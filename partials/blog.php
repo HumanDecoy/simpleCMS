@@ -34,7 +34,7 @@ foreach (array_reverse($userData) as $row)
 	echo  '
 	<div class="col-md-8 offset-md-2">
 	<h1>'.$row['title'].'</h1>
-	<p>By: '.$row['id'].' Created at: '.$row['createdAt'].'</p>
+	<p>By: '.$row['username'].' Created at: '.$row['createdAt'].'</p>
 	<p>'.$row['post'].'</p>
 	<a href="newLike.php?postId='. $row['id'] .'">
 		<div class="row">

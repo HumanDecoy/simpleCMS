@@ -1,7 +1,6 @@
 <?php 
 	session_start();
-	include "header.php";  
-	include "navbar.php";
+	
 	include "../error.php";
 	include "database.php";
 	include "../class/blogPost.php";
@@ -15,7 +14,7 @@
 	$thePost->createNew($newTitle, $newPost, $userid);
 
 		
-	header("Location:/simplecms/partials/blog.php");
+	//header("Location:/simplecms/partials/blog.php");
 
 
 

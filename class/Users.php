@@ -33,7 +33,7 @@ class Users
   public function getAllPosts($id)
   {
     $statement = $this->pdo->prepare("
-    SELECT * FROM blogpost
+    SELECT * FROM blogpost INNER JOIN user ON blogpost.userID = user.id
     WHERE userID = '$id'
       ");
     $statement->execute();
