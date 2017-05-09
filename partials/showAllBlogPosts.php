@@ -3,6 +3,12 @@ include "../error.php";
 include "database.php";
 
 $st = $pdo->prepare("SELECT * FROM blogpost INNER JOIN user ON blogpost.userID = user.id");  
+/*
+ISTÄLLET FÖR INNER JOIN ? -->
+
+SELECT blogpost.id, title, post, userID, blogpost.createdAt, username , isAdmin FROM blogpost INNER JOIN user ON blogpost.userID = user.id WHERE userID = 'VARIABELN'
+*/
+
 $st->execute();
 	
 $data = $st->fetchAll(PDO::FETCH_ASSOC);
