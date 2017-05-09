@@ -2,7 +2,7 @@
 	session_start();
 	include "header.php";  
 	include "navbar.php";
-	include "error.php";
+	include "../error.php";
 	include "database.php";
 	include "blogPost.php";
 	
