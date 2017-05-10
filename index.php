@@ -9,8 +9,9 @@
 	 
 	 <div class='col-md-8 offset-md-2'> <br/ ><h1 align='center'>SHOW ALL THE BLOGS</h1><br /><br />
 	
-	<?php include "partials/showAllBlogPosts.php"; ?>
-
+	<?php include "partials/showAllBlogPosts.php"; 
+	include "partials/footer.php";
+	?>
 <!--
 	<div class="container">
 		
@@ -34,9 +35,9 @@
 		echo "<h3> overlord </h3>";
 	}
 	
-
-
-	include "partials/footer.php";
-	?> 
-	
 */
+
+	
+	 
+	
+
