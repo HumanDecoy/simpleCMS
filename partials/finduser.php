@@ -1,7 +1,6 @@
 <?php
 
-function sendData () 
-{
+
 include 'database.php'; 
 include '../class/Users.php';
 include '../error.php';
@@ -10,9 +9,5 @@ $selectedUser = $usercheck->getAllFrom();
 $data = json_encode($selectedUser);
 
 echo $data;
-}
-
-sendData();
-
 
 ?>

@@ -18,9 +18,9 @@ header("Location:/simpleCMS/index.php");
 <div class="searching">
 <h2 align="center"> Search for User </h2>
 
-<form method="POST" >
+<form method="GET" >
 <input align="center" class="form-control col-md-6 offset-md-3"  name="username" placeholder="Username">
- <button onclick="getUser();" class="col-md-6 offset-md-3 btn btn-lg btn-primary" type="submit">Search</button>
+ <button onclick="getUser()" class="col-md-6 offset-md-3 btn btn-lg btn-primary" >Search</button>
  </form>
 
 
@@ -28,9 +28,6 @@ header("Location:/simpleCMS/index.php");
 <p id="test-p"> </p>
 
 </div>
-
-
-
 
 
 
