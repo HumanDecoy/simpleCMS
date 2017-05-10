@@ -24,8 +24,8 @@ header("Location:/simpleCMS/index.php");
  </form>
 
 
-<div class="adminpanel col-md-12">
-
+<div id="admin-block" class="adminpanel col-md-12">
+<p id="test-p"> </p>
 
 </div>
 
