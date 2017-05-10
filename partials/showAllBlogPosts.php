@@ -2,7 +2,7 @@
 include "../error.php";
 include "database.php";
 
-$st = $pdo->prepare("SELECT * FROM blogpost INNER JOIN user ON blogpost.userID = user.id");  
+$st = $pdo->prepare("SELECT blogpost.id, blogpost.title, blogpost.post, blogpost.userID, blogpost.createdAt, user.username FROM blogpost INNER JOIN user ON blogpost.userID = user.id");  
 /*
 ISTÄLLET FÖR INNER JOIN ? -->
 
@@ -20,7 +20,7 @@ foreach (array_reverse($data) as $row)
 		<h1>'.$row['title'].'</h1>
 		<h3>By: '.$row["username"].' Created at: '.$row['createdAt'].'</h3>
 		<p>'.$row['post'].'</p>
-		<img src="thumb-up.png" class="img-fluid" alt="Responsive image"><br/><br />
+		<img src="../pictures/thumb-up.png" class="img-fluid" alt="Responsive image"><br/><br />
 		';
 	?> 
 	</div>
