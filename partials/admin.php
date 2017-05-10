@@ -33,8 +33,6 @@ header("Location:/simpleCMS/index.php");
 
 
 
-
-
 <?php
 include "footer.php";
 ?>
