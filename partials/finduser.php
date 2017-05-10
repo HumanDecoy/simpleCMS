@@ -1,10 +1,9 @@
 <?php
+include 'database.php'; 
+include '../class/Users.php';
 
-echo"hello";
-
-
-
-
-
+$usercheck = new Users($pdo);
+$selectedUser = $usercheck->getAllFrom();
+var_dump($selectedUser);
 
 ?>

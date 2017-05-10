@@ -18,7 +18,7 @@ header("Location:/simpleCMS/index.php");
 <div class="searching">
 <h2 align="center"> Search for User </h2>
 
-<form action="finduser.php" method="POST" >
+<form method="POST" >
 <input align="center" class="form-control col-md-6 offset-md-3"  name="username" placeholder="Username">
  <button onclick="getUser();" class="col-md-6 offset-md-3 btn btn-lg btn-primary" type="submit">Search</button>
  </form>
