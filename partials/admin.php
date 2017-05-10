@@ -20,7 +20,7 @@ header("Location:/simpleCMS/index.php");
 
 <form action="finduser.php" method="POST" >
 <input align="center" class="form-control col-md-6 offset-md-3"  name="username" placeholder="Username">
- <button class="col-md-6 offset-md-3 btn btn-lg btn-primary" type="submit">Search</button>
+ <button onclick="getUser();" class="col-md-6 offset-md-3 btn btn-lg btn-primary" type="submit">Search</button>
  </form>
 
 
