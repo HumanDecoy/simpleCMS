@@ -34,12 +34,11 @@ foreach (array_reverse($userData) as $row)
 	echo  '
 	<div class="col-md-8 offset-md-2">
 	<h1>'.$row['title'].'</h1>
-	<p>By: '.$row['userID'].' Created at: '.$row['createdAt'].'</p>
+	<p>By: '.$row['username'].' Created at: '.$row['createdAt'].'</p>
 	<p>'.$row['post'].'</p>
 	<a href="newLike.php?postId='. $row['id'] .'">
 		<div class="row">
-		<img src="/simplecms/pictures/thumb-up.png" class="img-fluid" alt="Responsive image">
-		<button class="btn btn-lg btn-primary" type="submit" id="likeThis"> ['. $count  . ']</button></a> 
+		<button class="btn btn-lg btn-primary" type="submit" id="likeThis">Like ['. $count  . ']</button></a> 
 		<a href="editPost.php?postId='. $row['id'] .'"><button class=" btn btn-lg btn-primary" type="submit" id="editThis">Edit</button></a>
 			<br />
 
