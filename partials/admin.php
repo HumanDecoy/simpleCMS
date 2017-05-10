@@ -6,6 +6,9 @@ if($_SESSION["admin"]==!true){
 header("Location:/simpleCMS/index.php");
 				}
 
+
+
+
 ?>
 <div class="container">
 
@@ -15,10 +18,14 @@ header("Location:/simpleCMS/index.php");
 <div class="searching">
 <h2 align="center"> Search for User </h2>
 
-<form action="" method="POST" >
+<form action="finduser.php" method="POST" >
 <input align="center" class="form-control col-md-6 offset-md-3"  name="username" placeholder="Username">
  <button class="col-md-6 offset-md-3 btn btn-lg btn-primary" type="submit">Search</button>
  </form>
+
+
+<div class="adminpanel col-md-12">
+
 
 </div>
 
