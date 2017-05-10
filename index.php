@@ -7,27 +7,25 @@
 	 ?>
 
 	 
-	<h1>SHOW ALL THE BLOGS</h1><br />
+	 <div class='col-md-8 offset-md-2'> <br/ ><h1 align='center'>SHOW ALL THE BLOGS</h1><br /><br />
+	
 	<?php include "partials/showAllBlogPosts.php"; ?>
 
+<!--
 	<div class="container">
 		
-
 		<div class="row col-md-12">
 			<h1>DIS IS FIRSTPAGE</h1>
 		</div>
-		<!-- EXAMPLE FOR SENDING VARIABLES OVER PAGES -->
+		// EXAMPLE FOR SENDING VARIABLES OVER PAGES
 		<div class="row row col-md-12">
 			<a href="login.php?myvar=hello"> test </a>
 		</div>
 	
-
-
-
-
 	</div>
+	
 	<?php 
-
+/*
 
 	if ($_SESSION['loggedIn'] === true){
 		echo "<h2> Welcome " . $_SESSION['username'] . "!</h2>";
@@ -41,4 +39,4 @@
 	include "partials/footer.php";
 	?> 
 	
-
+*/

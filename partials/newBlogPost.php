@@ -10,15 +10,9 @@
 	$newPost = $_POST['newPost'];
 
 	$thePost = new NewBlogPost($pdo);
-
 	$thePost->createNew($newTitle, $newPost, $userid);
 
-		
-	//header("Location:/simplecms/partials/blog.php");
-
-
-
-include "footer.php";
+	include "footer.php";
 
 
 

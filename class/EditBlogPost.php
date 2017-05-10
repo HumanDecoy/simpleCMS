@@ -59,7 +59,7 @@ class EditBlogPost
       WHERE id = $thePostId
     ");
     $statement->execute();
-    header("Location:/simplecms/partials/blog.php");
+    //header("Location:/simplecms/partials/blog.php");
   }
 
 }
