@@ -33,8 +33,7 @@ class Users
   public function getAllPosts($id)
   {
     $statement = $this->pdo->prepare("
-    SELECT * FROM blogpost 
-    WHERE userID = '$id'
+    SELECT blogpost.id, blogpost.title, blogpost.post, blogpost.userID, blogpost.createdAt, user.username FROM blogpost INNER JOIN user ON blogpost.userID = user.id
       ");
     $statement->execute();
     return $statement->fetchAll(PDO::FETCH_ASSOC);
