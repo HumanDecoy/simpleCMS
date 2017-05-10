@@ -45,12 +45,12 @@ foreach (array_reverse($userData) as $row)
 	
 
 		<!-- Button trigger modal -->
-<a><button type="button" type="submit" class="btn-lg btn btn-primary" data-toggle="modal" data-target="#deleteModal ">Delete
+<a><button type="button"  class="btn-lg btn btn-primary" data-toggle="modal" data-target="#'. $row['id'] .'">Delete
 </button></a>
 
 <!-- Modal -->
 
-<div class="modal" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal" id="'. $row['id'] .'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
