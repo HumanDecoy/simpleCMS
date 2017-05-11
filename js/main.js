@@ -8,12 +8,10 @@ $.ajax({
 	url: '/simplecms/partials/finduser.php',
 	//när det funkar :
 	success: (response) => {
-		var onSite = $("#admin-block");
+		
 		var data = JSON.parse(response);
-		console.log(data);
-		console.log(data[0]);
-		console.log(response);
-		onSite.append(data[0].username);
+		setUsers(data);
+
 	},
 	//errors
 	error: (error) => {console.log(error)}, //alt .fail((error)=> error)
@@ -22,7 +20,21 @@ $.ajax({
 });
 }
 
+let setUsers = (data) => {
+let onSite = $("#admin-block");
+onSite.append(
+`
+<div class="adminCard card col-md-3 " style="width: 20rem; color:black">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-block">
+    <h4 class="card-title">Username= </h4>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+`
 
+	);
 console.log(data);
 
-
+}

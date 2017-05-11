@@ -18,15 +18,17 @@ header("Location:/simpleCMS/index.php");
 <div class="searching">
 <h2 align="center"> Search for User </h2>
 
-<form method="GET" >
-<input align="center" class="form-control col-md-6 offset-md-3"  name="username" placeholder="Username">
- <button onclick="getUser()" class="col-md-6 offset-md-3 btn btn-lg btn-primary" >Search</button>
- </form>
+
+<input align="center" class="form-control col-md-6 offset-md-3"  placeholder="Username">
+ <button id ="getUser" onclick="getUser()" class="col-md-6 offset-md-3 btn btn-lg btn-primary" >Search</button>
 
 
-<div id="admin-block" class="adminpanel col-md-12">
-<p id="test-p"> </p>
 
+<div class="adminpanel col-md-12 ">
+<div id="admin-block" class=row >
+
+
+</div>
 </div>
 
 
