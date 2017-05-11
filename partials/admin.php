@@ -25,6 +25,7 @@ header("Location:/simpleCMS/index.php");
 
 
 <div class="adminpanel col-md-12 ">
+<button id ="getUser" onclick="getUser()" class="col-md-3 btn btn-success">Show all users</button>
 <div id="admin-block" class=row >
 
 
