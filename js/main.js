@@ -1,11 +1,11 @@
 var data;
-	
+
 var getUser = () => {
 
 	
-$.ajax({
-	method: 'GET',
-	url: '/simplecms/partials/finduser.php',
+	$.ajax({
+		method: 'GET',
+		url: '/simplecms/partials/finduser.php',
 	//när det funkar :
 	success: (response) => {
 
@@ -21,28 +21,28 @@ $.ajax({
 }
 
 let setUsers = (data) => {
-let output = document.getElementById("admin-block");
-output.innerHTML = " "
-for (var i = 0; i < data.length; i++) {
-	adminText=
-`
-<div class="adminCard card col-md-3 " style="width: 20rem; color:black">
-  <div class="card-block">
-    <h4 class="card-title">User:${data[i].username}  </h4>
-    <p class="card-text">Admin = ${data[i].isAdmin} </p>
-     <p class="card-text">user ID = ${data[i].id} </p>
-    <p class="card-text">Created = ${data[i].createdAt} </p>
-   	<a href="#" class="btn btn-primary btn-block">Show Posts</a>
-    <a href="#" class="btn btn-danger btn-block">Delete User</a>
-   
-  </div>
-</div>
-`
-output.innerHTML+= adminText;
-}
+	let output = document.getElementById("admin-block");
+	output.innerHTML = " "
+	for (var i = 0; i < data.length; i++) {
+		adminText=
+		`
+		<div class="adminCard card col-md-3 " style="width: 20rem; color:black">
+		<div class="card-block">
+		<h4 class="card-title">User:${data[i].username}  </h4>
+		<p class="card-text">Admin = ${data[i].isAdmin} </p>
+		<p class="card-text">user ID = ${data[i].id} </p>
+		<p class="card-text">Created = ${data[i].createdAt} </p>
+		<a href="#" class="btn btn-primary btn-block">Show Posts</a>
+		<a href="#" class="btn btn-danger btn-block">Delete User</a>
+		
+		</div>
+		</div>
+		`
+		output.innerHTML+= adminText;
+	}
 	
 
-console.log(data);
+	console.log(data);
 
 }
 
