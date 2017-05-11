@@ -11,9 +11,25 @@ $isLiked = $like->getLike($user, $postLikeId);
 
 if ($isLiked){
 	$like->deleteLike($user,$postLikeId);
-	header("Location:/simplecms/partials/blog.php");
+	if($_SESSION["admin"]===true)
+	{
+		header("Location:/simplecms/index.php");
+	}
+	else
+	{
+		header("Location:/simplecms/partials/blog.php");
+	}
+	
 }
-else {
-$like->createNew($user,$postLikeId);
-header("Location:/simplecms/partials/blog.php");
+else 
+{
+	$like->createNew($user,$postLikeId);
+	if($_SESSION["admin"]===true)
+	{
+		header("Location:/simplecms/index.php");
+	}
+	else
+	{
+		header("Location:/simplecms/partials/blog.php");
+	}
 }

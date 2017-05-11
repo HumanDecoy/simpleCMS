@@ -59,7 +59,14 @@ class EditBlogPost
       WHERE id = $thePostId
     ");
     $statement->execute();
-    header("Location:/simplecms/partials/blog.php");
+    if($_SESSION["admin"]===true)
+    {
+      header("Location:/simplecms/index.php");
+    }
+    else
+    {
+      header("Location:/simplecms/partials/blog.php");
+    }
   }
 
 }
