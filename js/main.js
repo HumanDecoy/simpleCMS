@@ -8,7 +8,7 @@ $.ajax({
 	url: '/simplecms/partials/finduser.php',
 	//när det funkar :
 	success: (response) => {
-		
+
 		var data = JSON.parse(response);
 		setUsers(data);
 
@@ -21,20 +21,30 @@ $.ajax({
 }
 
 let setUsers = (data) => {
-let onSite = $("#admin-block");
-onSite.append(
+let output = document.getElementById("admin-block");
+output.innerHTML = " "
+for (var i = 0; i < data.length; i++) {
+	adminText=
 `
 <div class="adminCard card col-md-3 " style="width: 20rem; color:black">
-  <img class="card-img-top" src="..." alt="Card image cap">
   <div class="card-block">
-    <h4 class="card-title">Username= </h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h4 class="card-title">User:${data[i].username}  </h4>
+    <p class="card-text">Admin = ${data[i].isAdmin} </p>
+     <p class="card-text">user ID = ${data[i].id} </p>
+    <p class="card-text">Created = ${data[i].createdAt} </p>
+   	<a href="#" class="btn btn-primary btn-block">Show Posts</a>
+    <a href="#" class="btn btn-danger btn-block">Delete User</a>
+   
   </div>
 </div>
 `
+output.innerHTML+= adminText;
+}
+	
 
-	);
 console.log(data);
 
 }
+
+
+// <img class="card-img-top" src="..." alt="Card image cap">
