@@ -59,7 +59,7 @@ class EditBlogPost
       WHERE id = $thePostId
     ");
     $statement->execute();
-    if($_SESSION["admin"]===true)
+    if($_SESSION["admin"]===true || $_SESSION["loggedIn"]===true && stripos($_SERVER['REQUEST_URI'], 'simplecms/index.php'))
     {
       header("Location:/simplecms/index.php");
     }
