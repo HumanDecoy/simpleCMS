@@ -19,6 +19,26 @@ var getUser = () => {
 
 });
 }
+var getSearch = (user) => {
+
+	
+	$.ajax({
+		method: 'GET',
+		url: '/simplecms/partials/getuserSearch.php?thisUser='+user,
+	//när det funkar :
+	success: (response) => {
+
+		var data = JSON.parse(response);
+		setUsers(data);
+
+	},
+	//errors
+	error: (error) => {console.log(error)}, //alt .fail((error)=> error)
+
+
+});
+}
+
 
 let setUsers = (data) => {
 	let output = document.getElementById("admin-block");
@@ -40,11 +60,9 @@ let setUsers = (data) => {
 		`
 		output.innerHTML+= adminText;
 	}
-	
-
-	console.log(data);
-
 }
+
+
 
 
 // <img class="card-img-top" src="..." alt="Card image cap">

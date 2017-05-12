@@ -38,6 +38,18 @@ class Users
     $statement->execute();
     return $statement->fetchAll(PDO::FETCH_ASSOC);
   }
+  
+
+   public function getUserArr($user)
+  {
+    $statement = $this->pdo->prepare("
+   SELECT * FROM user 
+   WHERE username = '$user'
+      ");
+    $statement->execute();
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+
+  }
 
 
 }

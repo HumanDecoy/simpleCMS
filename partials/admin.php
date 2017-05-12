@@ -8,7 +8,6 @@ if($_SESSION["admin"]==!true){
 
 
 
-
 ?>
 <div class="container">
 
@@ -18,9 +17,9 @@ if($_SESSION["admin"]==!true){
 	<div class="searching">
 		<h2 align="center"> Search for User </h2>
 
-
-		<input align="center" class="form-control col-md-6 offset-md-3"  placeholder="Username">
-		<button id ="getUser" onclick="getUser()" class="col-md-6 offset-md-3 btn btn-lg btn-primary" >Search</button>
+		
+		<input align="center" class="form-control col-md-6 offset-md-3"  placeholder="Username" name="username">
+		<button id ="getUser" onclick="getSearch('lisa')" class="col-md-6 offset-md-3 btn btn-lg btn-primary" >Search</button>
 
 
 
