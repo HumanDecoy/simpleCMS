@@ -17,7 +17,7 @@ if($_SESSION["admin"]==!true){
 	<div class="searching">
 		<h2 align="center"> Search for User </h2>
 
-		<form class="test">
+		<form action="javascript:void(0)">
 		<input align="center" class="form-control col-md-6 offset-md-3"  placeholder="Username" name="username">
 		</form>
 		<button id ="getUser" onclick="getSearch(document.forms[1].username.value)" class="col-md-6 offset-md-3 btn btn-lg btn-primary" >Search</button>
