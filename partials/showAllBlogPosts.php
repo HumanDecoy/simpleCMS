@@ -39,7 +39,7 @@ foreach (array_reverse($data) as $row)
 			echo '
 			<a href="partials/newLike.php?postId='. $row['id'] .'">
 			<div class="row">
-			<button class="btn btn-lg btn-primary" type="submit" id="likeThis">Like '. $count  . '</button></a>
+			<button class="btn btn-lg btn-primary" type="submit" id="likeThis">Like ['. $count  . ']</button></a>
 			';
 		}
 		else

@@ -10,9 +10,10 @@ $isLiked = $like->getLike($user, $postLikeId);
 
 if ($isLiked){
 	$like->deleteLike($user,$postLikeId);
-	if($_SESSION["admin"]===true || $_SESSION["loggedIn"]===true && stripos($_SERVER['REQUEST_URI'], 'simplecms/index.php'))
+	$_SESSION['url'] = $_SERVER['HTTP_REFERER'];
+	if($_SESSION["admin"]===true || $_SESSION["loggedIn"]===true)
 	{
-		header("Location:/simplecms/index.php");
+		header("Location:".$_SESSION['url']);
 	}
 	else
 	{
@@ -23,9 +24,10 @@ if ($isLiked){
 else 
 {
 	$like->createNew($user,$postLikeId);
-	if($_SESSION["admin"]===true || $_SESSION["loggedIn"]===true && stripos($_SERVER['REQUEST_URI'], 'simplecms/index.php'))
+	$_SESSION['url'] = $_SERVER['HTTP_REFERER'];
+	if($_SESSION["admin"]===true || $_SESSION["loggedIn"]===true)
 	{
-		header("Location:/simplecms/index.php");
+		header("Location:".$_SESSION['url']);
 	}
 	else
 	{

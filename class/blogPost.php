@@ -19,15 +19,19 @@ class NewBlogPost
     if($title === "")
     {
       echo '
-        <h3>You must enter a title</h3>
-        <a href="blog.php">Back</a>
+        <div class="col-md-8 offset-md-2"><br />
+          <h2>You need to enter a title to your new blogpost</h2>
+          <a href="blog.php"><button class=" btn btn-lg btn-primary">Back</button></a>
+        </div>
         ';
     }
     elseif($blogpost === "")
     {
       echo '
-        <h3>You must write some content in your new blogpost</h3>
-        <a href="blog.php">Back</a>
+        <div class="col-md-8 offset-md-2"><br />
+          <h2>You need to write content in your new blogpost</h2>
+          <a href="blog.php"><button class=" btn btn-lg btn-primary">Back</button></a>
+        </div>
       ';
     }
     else
