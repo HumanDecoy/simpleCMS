@@ -59,14 +59,8 @@ class EditBlogPost
       WHERE id = $thePostId
     ");
     $statement->execute();
-    if($_SESSION["admin"]===true || $_SESSION["loggedIn"]===true && stripos($_SERVER['REQUEST_URI'], 'simplecms/index.php'))
-    {
-      header("Location:/simplecms/index.php");
-    }
-    else
-    {
-      header("Location:/simplecms/partials/blog.php");
-    }
+    $_SESSION['url'] = $_SERVER['HTTP_REFERER'];
+    header("Location:".$_SESSION['url']);
   }
 
 }

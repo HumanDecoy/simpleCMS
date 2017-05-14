@@ -11,26 +11,12 @@ $isLiked = $like->getLike($user, $postLikeId);
 if ($isLiked){
 	$like->deleteLike($user,$postLikeId);
 	$_SESSION['url'] = $_SERVER['HTTP_REFERER'];
-	if($_SESSION["admin"]===true || $_SESSION["loggedIn"]===true)
-	{
-		header("Location:".$_SESSION['url']);
-	}
-	else
-	{
-		header("Location:/simplecms/partials/blog.php");
-	}
+	header("Location:".$_SESSION['url']);
 	
 }
 else 
 {
 	$like->createNew($user,$postLikeId);
 	$_SESSION['url'] = $_SERVER['HTTP_REFERER'];
-	if($_SESSION["admin"]===true || $_SESSION["loggedIn"]===true)
-	{
-		header("Location:".$_SESSION['url']);
-	}
-	else
-	{
-		header("Location:/simplecms/partials/blog.php");
-	}
+	header("Location:".$_SESSION['url']);
 }
