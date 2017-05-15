@@ -46,7 +46,7 @@ let setUsers = (data) => {
 	for (var i = 0; i < data.length; i++) {
 		adminText=
 		`
-		<div class="adminCard card col-md-3 " style="width: 20rem; color:black">
+		<div class="adminCard card col-lg-3 col-sm-6" style="width: 20rem; color:black">
 		<div class="card-block">
 		<h4 class="card-title">User:${data[i].username}  </h4>
 		<p class="card-text">Admin = ${data[i].isAdmin} </p>
