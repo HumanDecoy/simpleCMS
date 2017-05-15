@@ -6,11 +6,13 @@ include "class/Users.php";
 include "class/Like.php";
 $likes = new Like($pdo);
 $postLikes = $likes->getAllFrom();
-$currentUser = new Users($pdo);
-$userData = $currentUser->getAllPosts($_SESSION['id']);
 
+$st = $pdo->prepare("SELECT blogpost.id, blogpost.title, blogpost.post, blogpost.userID, blogpost.createdAt, user.username FROM blogpost INNER JOIN user ON blogpost.userID = user.id");  
 
-foreach (array_reverse($userData) as $row)
+$st->execute();
+	
+$data = $st->fetchAll(PDO::FETCH_ASSOC);
+foreach (array_reverse($data) as $row)
 { ?>
 	<div> 
 	<?php 
@@ -46,7 +48,7 @@ foreach (array_reverse($userData) as $row)
 			<a><button type="button"  class="btn-lg btn btn-primary" data-toggle="modal" data-target="#'. $row['id'] .'">Delete
 			</button></a>
 
-				<!-- Modal -->
+			<!-- Modal -->
 			<div class="modal" id="'. $row['id'] .'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			  	<div class="modal-dialog" role="document">
 			    	<div class="modal-content">
@@ -74,3 +76,6 @@ foreach (array_reverse($userData) as $row)
 	
 <?php 
 } 
+
+	
+
