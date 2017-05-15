@@ -1,4 +1,4 @@
-<div class='col-md-8 offset-md-2'> <h1 align='center'>CREATE A NEW BLOG POST</h1><br /> </div>
+<div class='col-md-8 offset-md-2'> <h1 align='center'>Create a new blogpost</h1><br /> </div>
 <div class="container">
 	<div class='col-md-8 offset-md-2'>
 	

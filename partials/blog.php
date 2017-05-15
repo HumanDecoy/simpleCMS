@@ -19,7 +19,7 @@ $userData = $currentUser->getAllPosts($_SESSION['id']);
 
 <?php
 
-echo " <div class='col-md-8 offset-md-2'> <br/ ><h1 align='center'>YOUR POSTS</h1><br /><br /> </div>";
+echo " <div class='col-md-8 offset-md-2'> <br/ ><h1 align='center'>Your posts</h1><br /><br /> </div>";
 
 foreach (array_reverse($userData) as $row)
 	{ ?>

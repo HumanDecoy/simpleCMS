@@ -7,3 +7,6 @@ body{
   color: #fff;
   font: 150%/1.5 'Fira Code', monospace;
 }
+button {
+	margin-right: 0.5em;
+}
