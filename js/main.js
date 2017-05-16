@@ -69,12 +69,39 @@ let setPost = (data) => {
 	output.innerHTML= `<h1 class="zero">User:${data[0].username}  </h1>`;
 	for (var i = 0; i < data.length; i++) {
 		adminText=
+
 		`
 		<div class="postMedia media col-lg-11">
 		<div class="media-body" style="color:black;">
 		<h3 class="mt-0"> ${data[i].title}</h3>
 		<h5 class="mt-0">Created at : ${data[i].createdAt}</h5>
 		<p>${data[i].post}</p>
+
+	<a><button type="button"  class="btn btn-danger" data-toggle="modal" data-target="#${data[i].id}">Delete
+</button></a>
+
+<!-- Modal -->
+
+<div class="modal" id="${data[i].id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" style="color:black" id="exampleModalLabel">Deleting Post</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+       <div class="modal-body">
+    <p style="color:black">  Are you sure you want to delete this post?</p>
+      </div> 
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+  <a href="deletePost.php?postId=${data[i].id}">     <button type="button" class="btn btn-primary">Delete</button> </a>
+      </div>
+    </div>
+  </div>
+</div>
+
 		</div>
 		</div>
 
