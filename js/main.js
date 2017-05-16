@@ -37,12 +37,12 @@ var getSearch = (user) => {
 
 
 });
-}
+};
 
 
 let setUsers = (data) => {
 	let output = document.getElementById("admin-block");
-	output.innerHTML = " "
+	output.innerHTML = " ";
 	for (var i = 0; i < data.length; i++) {
 		adminText=
 		`
@@ -60,12 +60,34 @@ let setUsers = (data) => {
 		`;
 		output.innerHTML+= adminText;
 	}
-}
+};
+
+let setPost = (data) => {
+	let output = document.getElementById("admin-block");
+	output.innerHTML = " ";
+	output.innerHTML= `<h1 class="zero">User:${data[0].username}  </h1>`;
+	for (var i = 0; i < data.length; i++) {
+		adminText=
+		`
+		<div class="postMedia media">
+		<div class="media-body" style="color:black;">
+		<h3 class="mt-0">Bottom-aligned media</h3>
+		<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+		<p class="mb-0">Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+		</div>
+		</div>
 
 
-function deleteUser(id){
-		
-		$.ajax({
+		`;
+		output.innerHTML+= adminText;
+	}
+
+};
+
+
+let deleteUser = (id) =>{
+
+	$.ajax({
 		method: 'POST',
 		data:{userId:id},
 		url: '/simplecms/partials/deleteUser.php',
@@ -81,7 +103,27 @@ function deleteUser(id){
 
 
 });
-}
+};
+
+let allPost = (id) =>{
+	$.ajax({
+		method: 'GET',
+		url: '/simplecms/partials/getuserId.php?thisUser='+id,
+	//när det funkar :
+	success: (response) => {
+
+		var data = JSON.parse(response);
+		console.log(data);
+		setPost(data);
+
+	},
+	//errors
+	error: (error) => {console.log(error)}, //alt .fail((error)=> error)
+
+
+});
+
+};
 
 
 

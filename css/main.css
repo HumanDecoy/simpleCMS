@@ -9,10 +9,22 @@
 	
 }
 
+.postMedia{
+	border:solid 1px black;
+	margin-top:2em;
+	margin-left:1em;
+	margin-right:1em;
+	background-color:white;
+}
+
 .adminCard{
 	margin:auto;
 	margin-top:2em;
 }
 .btn-lg {
 	margin-right: 1em;
+}
+
+.zero{
+	margin:0 auto;
 }
