@@ -64,16 +64,17 @@ let setUsers = (data) => {
 
 let setPost = (data) => {
 	let output = document.getElementById("admin-block");
+	data.reverse();
 	output.innerHTML = " ";
 	output.innerHTML= `<h1 class="zero">User:${data[0].username}  </h1>`;
 	for (var i = 0; i < data.length; i++) {
 		adminText=
 		`
-		<div class="postMedia media">
+		<div class="postMedia media col-lg-11">
 		<div class="media-body" style="color:black;">
-		<h3 class="mt-0">Bottom-aligned media</h3>
-		<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-		<p class="mb-0">Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+		<h3 class="mt-0"> ${data[i].title}</h3>
+		<h5 class="mt-0">Created at : ${data[i].createdAt}</h5>
+		<p>${data[i].post}</p>
 		</div>
 		</div>
 
