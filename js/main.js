@@ -52,16 +52,36 @@ let setUsers = (data) => {
 		<p class="card-text">Admin = ${data[i].isAdmin} </p>
 		<p class="card-text">user ID = ${data[i].id} </p>
 		<p class="card-text">Created = ${data[i].createdAt} </p>
-		<a href="#" class="btn btn-primary btn-block">Show Posts</a>
-		<a href="#" class="btn btn-danger btn-block">Delete User</a>
+		<button onclick="allPost(${data[i].id})" class="btn btn-primary btn-block">Show Posts</button>
+		<button onclick="deleteUser(${data[i].id})" class="btn btn-danger btn-block">Delete User</button>
 		
 		</div>
 		</div>
-		`
+		`;
 		output.innerHTML+= adminText;
 	}
 }
 
+
+function deleteUser(id){
+		
+		$.ajax({
+		method: 'POST',
+		data:{userId:id},
+		url: '/simplecms/partials/deleteUser.php',
+	//när det funkar :
+	success: (response) => {
+
+		console.log("user deleted");
+		getUser();
+
+	},
+	//errors
+	error: (error) => {console.log(error)}, //alt .fail((error)=> error)
+
+
+});
+}
 
 
 

@@ -51,5 +51,15 @@ class Users
 
   }
 
+  public function deleteUser($userId)
+  {
+   $statement = $this->pdo->prepare("
+   DELETE FROM user 
+   WHERE id = '$userId'
+      ");
+    $statement->execute();
+
+  }
+
 
 }
