@@ -11,8 +11,5 @@
 
 	$thePost = new NewBlogPost($pdo);
 	$thePost->createNew($newTitle, $newPost, $userid);
-
 	include "footer.php";
-
-
-
+	
