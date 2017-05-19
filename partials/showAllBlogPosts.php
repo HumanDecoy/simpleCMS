@@ -7,12 +7,12 @@ include "class/Like.php";
 $likes = new Like($pdo);
 $postLikes = $likes->getAllFrom();
 
-$st = $pdo->prepare("SELECT blogpost.id, blogpost.title, blogpost.post, blogpost.userID, blogpost.createdAt, user.username FROM blogpost INNER JOIN user ON blogpost.userID = user.id");  
+$st = $pdo->prepare("SELECT blogpost.id, blogpost.title, blogpost.post, blogpost.userID, blogpost.createdAt, user.username FROM blogpost INNER JOIN user ON blogpost.userID = user.id ORDER BY blogpost.createdAt DESC");  
 
 $st->execute();
 	
 $data = $st->fetchAll(PDO::FETCH_ASSOC);
-foreach (array_reverse($data) as $row)
+foreach ($data as $row)
 { ?>
 	<div> 
 	<?php 
@@ -32,7 +32,7 @@ foreach (array_reverse($data) as $row)
 		echo '
 		<a href="partials/newLike.php?postId='. $row['id'] .'">
 		<div class="row">
-		<a><button class="btn btn-lg btn-primary" type="submit" id="likeThis" onclick="newLike('. $row['id'].');">Like ['. $count  . ']</button></a> 
+		<a><button class="btn btn-lg btn-primary" type="submit" id="likeThis'.$row['id'].'" onclick="newLike('.$row['userID'].', '. $row['id'].', '.$count.'); ">Like ['. $count  . ']</button></a> 
 		';
 	}
 	else
