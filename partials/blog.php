@@ -5,28 +5,27 @@ include "header.php";
 include "navbar.php";
 include "../error.php";
 include "database.php";
-include "newBlog.php";
+include "newBlog.php"; //includes the form for a new blogpost
 include "../class/Users.php";
 include "../class/Like.php";
+
 $likes = new Like($pdo);
-$postLikes = $likes->getAllFrom();
+$postLikes = $likes->getAllFrom();//Gets the likes on posts
+
 $username = $_SESSION['username'];
+
 $currentUser = new Users($pdo);
-$userData = $currentUser->getAllPosts($_SESSION['id']);
+$userData = $currentUser->getAllPosts($_SESSION['id']);//Calls a function that gets all the posts
 ?>
 <div class="container">
-
-
-
-<div class='col-md-8 offset-md-2'> <br/ ><h1 align='center'>Your posts</h1><br /><br /> </div>
-
+	<div class='col-md-8 offset-md-2'> <br/ >
+		<h1 align='center'>Your posts</h1><br /><br /> 
+	</div>
 
 <?php
 
 foreach (array_reverse($userData) as $row)
-	{ ?>
-
-	<?php 
+	{ //Loops through the posts and show the data as HTML
 	$count = 0;
 	foreach($postLikes as $likes){
 		if($likes['postId'] === $row['id'] ){
@@ -39,9 +38,10 @@ foreach (array_reverse($userData) as $row)
 		<p>By: '.$row['username'].' Created at: '.$row['createdAt'].'</p>
 		<p>'.$row['post'].'</p>
 		<div class="row">
-			<a><button class="btn btn-lg btn-primary" type="submit" id="likeThis'.$row['id'].'" onclick="newLike('.$row['userID'].', '. $row['id'].', '.$count.'); ">Like ['. $count  . ']</button></a> 
+			<a><button class="btn btn-lg btn-primary" type="submit" id="likeThis'.$row['id'].'" onclick="newLike('.$row['userID'].', '. $row['id'].', '.$count.'); ">Like ['. $count  . ']</button>
+			</a> 
 			<a href="editPost.php?postId='. $row['id'] .'">
-			<button class=" btn btn-lg btn-primary" type="submit" id="editThis">Edit</button>
+				<button class=" btn btn-lg btn-primary" type="submit" id="editThis">Edit</button>
 			</a>
 			<br />
 
@@ -70,18 +70,14 @@ foreach (array_reverse($userData) as $row)
 	  			<button type="button" class="btn btn-primary">Delete</button> 
 	  			</a>
 	     	  </div>
-	   	  </div>
-	  </div>
+	   	    </div>
+	      </div>
+	   </div>
 	</div><br /><br /><br />
 			
 	';
-
 	?> 
-	
-	</div>
-	</div>
-	<?php 
+</div>
+<?php 
 } 
-
-
-	include "footer.php"; 
+include "footer.php"; 

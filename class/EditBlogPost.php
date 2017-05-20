@@ -6,11 +6,9 @@ include "navbar.php";
 include "../error.php";
 include "database.php";
 
- 
-
+//Class with a private pdo and function
 class EditBlogPost
 {
-
   private $pdo;
 
   public function __construct($pdo)
@@ -18,6 +16,7 @@ class EditBlogPost
     $this->pdo = $pdo;
   }
  
+  //Function that gets all the data in blogpost table in the database 
   public function getAllFrom()
   {
 
@@ -28,7 +27,7 @@ class EditBlogPost
     return $statement->fetchAll(PDO::FETCH_ASSOC);
   } 
 
-
+  //Gets a specific post. Used in editPost.php
   public function getPost($thePostId)
   {
     $statement = $this->pdo->prepare("
@@ -40,6 +39,7 @@ class EditBlogPost
 
   }
 
+  //Updates a specific column in blogpost table. Gets the arguments from postToEdit.php
   public function editThePost($editTitle, $editPost, $thePostId)
   {
   	$statement = $this->pdo->prepare("
@@ -52,6 +52,7 @@ class EditBlogPost
   	]);
   }
 
+  //Deletes a post from blogpost table. UGets the arguments from deletePost.php
   public function deletePost($thePostId)
   {
     $statement = $this->pdo->prepare("

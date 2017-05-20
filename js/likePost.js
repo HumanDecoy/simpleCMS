@@ -1,11 +1,13 @@
+//Function to like/unlike a post. Gets the argument from showAllBlogPosts.php or blog.php. Called when a button in clicked
 let newLike = (userId, postId, count) =>{
     //console.log(userId, postId, count);
     
+    //Ajax call to update teh page async
     $.ajax({
         method: 'POST',
         data:postId,
         url: '/simplecms/partials/newLike.php?postId='+ postId,
-    //if successfull call
+    //If successfull call
         success: (response) => {
             console.log("Success! Post liked");
            // console.log(response);
@@ -16,7 +18,7 @@ let newLike = (userId, postId, count) =>{
             //console.log(likeInt);
             showLiked(postId,likeInt,count);
         },
-    //if there is an error
+    //In case of an error
         error: (error) => {
             console.log("Error");
         },
@@ -26,38 +28,27 @@ let newLike = (userId, postId, count) =>{
 
 let showLiked = (postId,likeInt,count) =>{
     var likeBtn = document.getElementById("likeThis"+postId);
-   //console.log(likeBtn);
+    //console.log(likeBtn);
     //console.log(count);
-    
     likeBtn.innerHTML = " ";
     if(likeInt === parseInt(likeInt, 10)){
         if(count !== 0){
             count = count-1;
         }
-
-        console.log("already liked by this user");
+        console.log("Already liked by this user");
         //console.log(count);
-
         likeText = 
         `
-            <button class="btn btn-lg btn-primary" type="submit" id="likeThis'.$row['id'].'" 
-            onclick="newLike('.$row['userID'].', '. $row['id'].', '.$count.'); ">
-            Like [${count}]</button>
+            Like [${count}]
         `;
         likeBtn.innerHTML=likeText;
     }else{
-        if(count === 0){
-            count = count +1;
-        }else if(likeInt === undefined){
-            count = count + 1;
-        }
+        count = count + 1;
         //console.log(count);
-        console.log("not liked before by this user");
+        console.log("Not liked before by this user");
         likeText = 
         `
-            <button class="btn btn-lg btn-primary" type="submit" id="likeThis'.$row['id'].'"  
-            onclick="newLike('.$row['userID'].' , '. $row['id'].', '.$count.');">
-            Like [${count}]</button>
+            Like [${count}]
         `;
         likeBtn.innerHTML=likeText;
     }

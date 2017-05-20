@@ -1,14 +1,12 @@
 <?php
-  
- include "../class/EditBlogPost.php";
-  $currentId = $_SESSION['id'];
-  $thePostId=$_GET['postId'];
+include "../class/EditBlogPost.php";
+$thePostId=$_GET['postId'];
 
- $currentPost = new EditBlogPost($pdo);
-  
- $thePost = $currentPost->getPost($thePostId);
+//Function that gets the current post to edit
+$currentPost = new EditBlogPost($pdo);
+$thePost = $currentPost->getPost($thePostId);
 
-
+//Loops through the data and shows it in a form that redirects to postToEdit.php when submitted
 foreach ($thePost as $row)
 { ?>
 
@@ -26,6 +24,5 @@ foreach ($thePost as $row)
 
  </div>
 </div>
-  
 
 <?php }

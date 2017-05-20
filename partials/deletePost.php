@@ -1,15 +1,11 @@
 <?php
-  
-  include "../class/EditBlogPost.php";
-  include "../error.php";
+include "../class/EditBlogPost.php";
+include "../error.php";
 
-  $currentId = $_SESSION['id'];
-  $thePostId=$_GET['postId'];
+$thePostId=$_GET['postId'];//Gets the current post id
 
-  $currentPost = new EditBlogPost($pdo);
-  $thePost = $currentPost->getPost($thePostId);
-
-  $postToDelete = new EditBlogPost($pdo);
-  $postToDelete->deletePost($thePostId);
+//Calls a function to delete the post
+$postToDelete = new EditBlogPost($pdo);
+$postToDelete->deletePost($thePostId);
 
   

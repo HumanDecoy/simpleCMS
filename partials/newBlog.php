@@ -1,3 +1,4 @@
+<!--Form for creating a new blogpost. Sends the values to newBlogPost.php when submitted -->
 <div class='col-md-8 offset-md-2'> <h1 align='center'>Create a new blogpost</h1><br /> </div>
 <div class="container">
 	<div class='col-md-8 offset-md-2'>
