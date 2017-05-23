@@ -30,39 +30,23 @@ let newLike = (userId, postId, count) =>{
 let showLiked = (postId,likeInt,count) =>{
     var likeBtn = document.getElementById("likeThis"+postId);
     //console.log(likeBtn);
-
     console.log(count+ " showliked");
-
-    //console.log(count);
-
     likeBtn.innerHTML = " ";
     if(likeInt === parseInt(likeInt)){
         
             count = count-1;
-
         
         //console.log("Already liked by this user");
         console.log(count + " is liked before");
-
-        }
-        //console.log("Already liked by this user");
-        //console.log(count);
-
         likeText = 
         `
             Like [${count}]
         `;
         likeBtn.innerHTML=likeText;
     }else{
-
         //count = count + 1;
         console.log(count + " not liked before");
        // console.log("Not liked before by this user");
-
-        //count = count + 1;
-        //console.log(count);
-        //console.log("Not liked before by this user");
-
         likeText = 
         `
             Like [${count}]
