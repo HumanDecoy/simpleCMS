@@ -29,7 +29,8 @@ let showLiked = (postId,likeInt,count,userId) =>{
         console.log("Already liked by this user");
         likeText = 
         `
-            <button class="btn btn-lg btn-primary" type="submit" id="likeThis${postId}" onclick="newLike(${userId}, ${postId}, ${count}); ">Like [${count}]</button>
+            <button class="btn btn-lg btn-primary" type="submit" id="likeThis${postId}" 
+            onclick="newLike(${userId}, ${postId}, ${count}); ">Like [${count}]</button>
         `;
         likeDiv.innerHTML=likeText;
     }else if(likeInt === undefined){
@@ -37,7 +38,8 @@ let showLiked = (postId,likeInt,count,userId) =>{
         console.log("Not liked before by this user");
         likeText = 
         `
-            <button class="btn btn-lg btn-primary" type="submit" id="likeThis${postId}" onclick="newLike(${userId}, ${postId}, ${count}); ">Like [${count}]</button>
+            <button class="btn btn-lg btn-primary" type="submit" id="likeThis${postId}" 
+            onclick="newLike(${userId}, ${postId}, ${count}); ">Like [${count}]</button>
         `;
         likeDiv.innerHTML=likeText;
     }
