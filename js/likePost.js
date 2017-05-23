@@ -10,12 +10,13 @@ let newLike = (userId, postId, count) =>{
     //If successfull call
         success: (response) => {
             console.log("Success! Post liked");
-           // console.log(response);
+            console.log(response);
+            console.log(count + " response");
             var data = JSON.parse(response);
-            //console.log(data);
+            console.log(data);
             //console.log(data.postId);
             var likeInt = data.id;
-            //console.log(likeInt);
+            console.log(likeInt);
             showLiked(postId,likeInt,count);
         },
     //In case of an error
@@ -29,23 +30,23 @@ let newLike = (userId, postId, count) =>{
 let showLiked = (postId,likeInt,count) =>{
     var likeBtn = document.getElementById("likeThis"+postId);
     //console.log(likeBtn);
-    //console.log(count);
+    console.log(count+ " showliked");
     likeBtn.innerHTML = " ";
-    if(likeInt === parseInt(likeInt, 10)){
-        if(count !== 0){
+    if(likeInt === parseInt(likeInt)){
+        
             count = count-1;
-        }
-        console.log("Already liked by this user");
-        //console.log(count);
+        
+        //console.log("Already liked by this user");
+        console.log(count + " is liked before");
         likeText = 
         `
             Like [${count}]
         `;
         likeBtn.innerHTML=likeText;
     }else{
-        count = count + 1;
-        //console.log(count);
-        console.log("Not liked before by this user");
+        //count = count + 1;
+        console.log(count + " not liked before");
+       // console.log("Not liked before by this user");
         likeText = 
         `
             Like [${count}]
