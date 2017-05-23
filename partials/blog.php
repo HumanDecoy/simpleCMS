@@ -38,7 +38,7 @@ foreach (array_reverse($userData) as $row)
 		<p>By: '.$row['username'].' Created at: '.$row['createdAt'].'</p>
 		<p>'.$row['post'].'</p>
 		<div class="row">
-			<a><button class="btn btn-lg btn-primary" type="submit" id="likeThis'.$row['id'].'" onclick="newLike('.$row['userID'].', '. $row['id'].', '.$count.'); ">Like ['. $count  . ']</button>
+			<a><div id="likeDiv'.$row['id'].'"><button class="btn btn-lg btn-primary" type="submit" id="likeThis'.$row['id'].'" onclick="newLike('.$row['userID'].', '. $row['id'].', '.$count.'); ">Like ['. $count  . ']</button></div>
 			</a> 
 			<a href="editPost.php?postId='. $row['id'] .'">
 				<button class=" btn btn-lg btn-primary" type="submit" id="editThis">Edit</button>

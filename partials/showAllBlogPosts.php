@@ -33,7 +33,7 @@ foreach ($data as $row)
 	{ //If a user or admin is logged in, they can like/unlike posts by this button
 		echo '
 		<div class="row">
-		<a><button class="btn btn-lg btn-primary" type="submit" id="likeThis'.$row['id'].'" onclick="newLike('.$row['userID'].', '. $row['id'].', '.$count.'); ">Like ['. $count  . ']</button></a> 
+		<a><div id="likeDiv'.$row['id'].'"><button class="btn btn-lg btn-primary" type="submit" id="likeThis'.$row['id'].'" onclick="newLike('.$row['userID'].', '. $row['id'].', '.$count.'); ">Like ['. $count  . ']</button></div>
 		';
 	}
 	else

@@ -1,6 +1,6 @@
 //Function to like/unlike a post. Gets the argument from showAllBlogPosts.php or blog.php. Called when a button in clicked
 let newLike = (userId, postId, count) =>{
-    //console.log(userId, postId, count);
+    console.log(userId, postId, count);
     
     //Ajax call to update teh page async
     $.ajax({
@@ -17,7 +17,7 @@ let newLike = (userId, postId, count) =>{
             //console.log(data.postId);
             var likeInt = data.id;
             console.log(likeInt);
-            showLiked(postId,likeInt,count);
+            showLiked(postId,likeInt,count,userId);
         },
     //In case of an error
         error: (error) => {
@@ -27,11 +27,13 @@ let newLike = (userId, postId, count) =>{
 };
 
 
-let showLiked = (postId,likeInt,count) =>{
+let showLiked = (postId,likeInt,count,userId) =>{
     var likeBtn = document.getElementById("likeThis"+postId);
-    //console.log(likeBtn);
+    var likeDiv = document.getElementById("likeDiv"+postId);
+    console.log(likeBtn);
+    console.log(likeDiv);
     console.log(count+ " showliked");
-    likeBtn.innerHTML = " ";
+    likeDiv.innerHTML = " ";
     if(likeInt === parseInt(likeInt)){
         
             count = count-1;
@@ -40,19 +42,21 @@ let showLiked = (postId,likeInt,count) =>{
         console.log(count + " is liked before");
         likeText = 
         `
-            Like [${count}]
+            <button class="btn btn-lg btn-primary" type="submit" id="likeThis${postId}" onclick="newLike(${userId}, ${postId}, ${count}); ">Like [${count}]</button>
         `;
-        likeBtn.innerHTML=likeText;
-    }else{
-        //count = count + 1;
+        likeDiv.innerHTML=likeText;
+    }else if(likeInt === undefined){
+
+        count = count + 1;
         console.log(count + " not liked before");
        // console.log("Not liked before by this user");
         likeText = 
         `
-            Like [${count}]
+            <button class="btn btn-lg btn-primary" type="submit" id="likeThis${postId}" onclick="newLike(${userId}, ${postId}, ${count}); ">Like [${count}]</button>
         `;
-        likeBtn.innerHTML=likeText;
+        likeDiv.innerHTML=likeText;
     }
+    console.log(count + " after ifs");
 };
 
 
